@@ -1,8 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Test\playerController.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Test\pickup.cs">
     <Files>
-      <File FileName="Assets\Scripts\Test\playerController.cs" Line="33" Column="6" />
+      <File FileName="Assets\Scripts\Test\playerController.cs" Line="66" Column="48" />
+      <File FileName="Assets\Scripts\Test\pickup.cs" Line="5" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

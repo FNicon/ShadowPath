@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class playerController : MonoBehaviour {
@@ -11,6 +12,11 @@ public class playerController : MonoBehaviour {
 	public LayerMask groundLayer;
 	public Transform groundChecker;
 	public float jumpForce;
+	public Text textcounter;
+	public Text interact;
+	private int soulCounter;
+	bool isOnLadder = false;
+	public float stairSpeed;
 	//public Transform launchPod;
 	//public GameObject missile;
 	//float fireRate = 0.5f;
@@ -21,6 +27,8 @@ public class playerController : MonoBehaviour {
 		playerBody = GetComponent<Rigidbody2D>();
 		playerAnimation = GetComponent<Animator>();
 		facingRight = true;
+		soulCounter = 0;
+		setText ();
 	}
 
 	void Update(){
@@ -31,6 +39,12 @@ public class playerController : MonoBehaviour {
 		}
 		if (Input.GetAxisRaw("Fire1")>0) {
 			//firing();
+		}
+		float verticalSpeed;
+		if (isOnLadder == true) {
+			verticalSpeed = Input.GetAxis ("Vertical");
+			playerBody.velocity = new Vector2 (playerBody.velocity.x,verticalSpeed*stairSpeed);
+			isOnLadder = false;
 		}
 	}
 
@@ -56,6 +70,24 @@ public class playerController : MonoBehaviour {
 		newVector = transform.localScale;
 		newVector.x = newVector.x * -1;
 		transform.localScale = newVector;
+	}
+	void OnTriggerEnter2D(Collider2D other) {
+		if (other.gameObject.CompareTag ("Pick Up")) {
+			soulCounter = soulCounter + 1;
+			setText ();
+		} else if (other.gameObject.CompareTag ("Interact")) {
+			if (Input.GetAxisRaw ("Fire1") > 0) {
+				generateText ();
+			}
+		} else if (other.gameObject.CompareTag ("Ladder")) {
+			isOnLadder = true;
+		}
+	}
+	void setText() {
+		textcounter.text = soulCounter.ToString();
+	}
+	void generateText() {
+		interact.text = soulCounter.ToString();
 	}
 	/*void firing() {
 		if (Time.time > reloadTime) {
