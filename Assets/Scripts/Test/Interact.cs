@@ -3,22 +3,19 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class Interact : MonoBehaviour {
-	public Text show;
+	public string show;
+	private Text recent;
+
 	// Use this for initialization
 	void Start () {
-		generateText ();
+		recent = GetComponent<Text> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
 	}
-	void generateText() {
-
-	}
-	void OnTriggerEnter2D(Collider2D other) {
-		if (other.gameObject.CompareTag ("Player")) {
-
-		}
+	public void generateText() {
+		recent.text = show;
 	}
 }

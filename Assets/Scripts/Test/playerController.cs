@@ -3,20 +3,16 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class playerController : MonoBehaviour {
-	public float maxSpeed;
-	Rigidbody2D playerBody;
-	Animator playerAnimation;
-	bool facingRight;
-	bool touchGround = false;
-	float groundCheckRadius = 0.2f;
-	public LayerMask groundLayer;
-	public Transform groundChecker;
-	public float jumpForce;
-	public Text textcounter;
-	public Text interact;
-	private int soulCounter;
-	bool isOnLadder = false;
-	public float stairSpeed;
+	public GroundMovement groundScript;
+	public ladderMovement ladderScript;
+	//Counter
+	public Score counter;
+	//Player
+	//private Rigidbody2D playerBody;
+	//private Animator playerAnimation;
+	//private bool facingRight;
+
+	private Interact interactObject;
 	//public Transform launchPod;
 	//public GameObject missile;
 	//float fireRate = 0.5f;
@@ -24,70 +20,55 @@ public class playerController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		playerBody = GetComponent<Rigidbody2D>();
-		playerAnimation = GetComponent<Animator>();
-		facingRight = true;
-		soulCounter = 0;
-		setText ();
+		//playerBody = GetComponent<Rigidbody2D>();
+		//playerAnimation = GetComponent<Animator>();
 	}
-
 	void Update(){
-		if ((touchGround) && (Input.GetAxis ("Jump") > 0)) {
-			touchGround = false;
-			playerAnimation.SetBool ("isTouchGround",touchGround); 
-			playerBody.AddForce(new Vector2(0,jumpForce));
+		if(isInputJump ()) {
+			if(groundScript.getTouchGround()) {
+				groundScript.jump ();
+			}
 		}
-		if (Input.GetAxisRaw("Fire1")>0) {
+		if  (isInputFire1()){
 			//firing();
-		}
-		float verticalSpeed;
-		if (isOnLadder == true) {
-			verticalSpeed = Input.GetAxis ("Vertical");
-			playerBody.velocity = new Vector2 (playerBody.velocity.x,verticalSpeed*stairSpeed);
-			isOnLadder = false;
 		}
 	}
 
 	// Update is called once per frame
 	void FixedUpdate () {
-		touchGround = Physics2D.OverlapCircle (groundChecker.position, groundCheckRadius,groundLayer);
-		playerAnimation.SetBool ("isTouchGround",touchGround);
-		playerAnimation.SetFloat ("verticalSpeed", playerBody.velocity.y);
-
 		float horizontalSpeed;
-		horizontalSpeed = Input.GetAxis ("Horizontal");
-		playerBody.velocity = new Vector2 (horizontalSpeed*maxSpeed,playerBody.velocity.y);
-		playerAnimation.SetFloat("speed",Mathf.Abs (horizontalSpeed));
-		if ((horizontalSpeed>0)&&(!facingRight)){
-			flipFacing();
-		} else if ((horizontalSpeed<0)&&(facingRight)){
-			flipFacing();
-		}
-	}
-	void flipFacing() {
-		facingRight = !facingRight;
-		Vector3 newVector;
-		newVector = transform.localScale;
-		newVector.x = newVector.x * -1;
-		transform.localScale = newVector;
+		//float verticalSpeed;
+		horizontalSpeed = inputHorizontal ();
+		//verticalSpeed = inputVertical ();
+
+		groundScript.moveHorizontal (horizontalSpeed);
 	}
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Pick Up")) {
-			soulCounter = soulCounter + 1;
-			setText ();
+			counter.scorePlus();
+			counter.updateText ();
 		} else if (other.gameObject.CompareTag ("Interact")) {
-			if (Input.GetAxisRaw ("Fire1") > 0) {
-				generateText ();
+			if (isInputFire1 ()) {
+				interactObject = other.gameObject.GetComponent<Interact>();
+				interactObject.generateText();
 			}
-		} else if (other.gameObject.CompareTag ("Ladder")) {
-			isOnLadder = true;
+		} else if (other.gameObject.CompareTag ("Rope")) {
+
+		} else if (other.gameObject.CompareTag ("Enemy")) {
+			Destroy(gameObject);
 		}
 	}
-	void setText() {
-		textcounter.text = soulCounter.ToString();
+	bool isInputJump() {
+		return (Input.GetAxis ("Jump") > 0);
 	}
-	void generateText() {
-		interact.text = soulCounter.ToString();
+	bool isInputFire1() {
+		return (Input.GetAxisRaw("Fire1")>0);
+	}
+	float inputVertical() {
+		return(Input.GetAxis ("Vertical"));
+	}
+	float inputHorizontal() {
+		return (Input.GetAxis ("Horizontal"));
 	}
 	/*void firing() {
 		if (Time.time > reloadTime) {
