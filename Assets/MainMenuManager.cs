@@ -4,7 +4,7 @@ using System.Collections;
 public class MainMenuManager : MonoBehaviour {
 	public GameObject optionPanel;
 	public GameObject extraPanel;
-
+	public GameObject exitPanel;
 	// Use this for initialization
 	void Start () {
 	
@@ -20,11 +20,8 @@ public class MainMenuManager : MonoBehaviour {
 		Application.LoadLevel (nextLevel);
 	}
 	public void exit() {
-		if (Application.isEditor) {
-			UnityEditor.EditorApplication.isPlaying = false;
-		} else {
-			Application.Quit ();
-		}
+		exitPanel.SetActive (true);
+		gameObject.SetActive (false);
 	}
 	public void option() {
 		optionPanel.SetActive (true);

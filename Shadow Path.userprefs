@@ -1,18 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\AudioButton.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\GroundMovement.cs">
     <Files>
-      <File FileName="Assets\AudioButton.cs" Line="26" Column="26" />
-      <File FileName="Assets\MainMenuManager.cs" Line="1" Column="1" />
-      <File FileName="..\Sample\Assets\Standard Assets\2D\Scripts\PlatformerCharacter2D.cs" Line="1" Column="1" />
-      <File FileName="..\Sample\Assets\Standard Assets\2D\Scripts\Platformer2DUserControl.cs" Line="1" Column="1" />
-      <File FileName="..\Sample\Assets\Standard Assets\2D\Scripts\Restarter.cs" Line="1" Column="1" />
-      <File FileName="..\Sample\Assets\Standard Assets\2D\Scripts\CameraFollow.cs" Line="1" Column="1" />
-      <File FileName="..\Sample\Assets\Standard Assets\2D\Scripts\Camera2DFollow.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Test\playerController.cs" Line="1" Column="1" />
-      <File FileName="Assets\OptionMenuManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\ExtraMenuManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\GroundMovement.cs" Line="12" Column="15" />
+      <File FileName="Assets\ladderMovement.cs" Line="139" Column="37" />
+      <File FileName="Assets\FireFlyAI.cs" Line="1" Column="1" />
       <File FileName="Assets\LightRay.cs" Line="1" Column="1" />
+      <File FileName="Assets\Shaders\Stencil Mask.shader" Line="1" Column="1" />
+      <File FileName="Assets\Shaders\Stencil Object.shader" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

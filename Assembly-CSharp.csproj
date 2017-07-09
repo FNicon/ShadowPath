@@ -46,19 +46,34 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\AudioButton.cs" />
+     <Compile Include="Assets\ExitMenuManager.cs" />
      <Compile Include="Assets\ExtraMenuManager.cs" />
+     <Compile Include="Assets\FireFlyAI.cs" />
+     <Compile Include="Assets\GroundMovement.cs" />
+     <Compile Include="Assets\Ladder.cs" />
      <Compile Include="Assets\LightRay.cs" />
      <Compile Include="Assets\MainMenuManager.cs" />
      <Compile Include="Assets\OptionMenuManager.cs" />
+     <Compile Include="Assets\Score.cs" />
      <Compile Include="Assets\Scripts\Test\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\Test\Interact.cs" />
      <Compile Include="Assets\Scripts\Test\pickup.cs" />
      <Compile Include="Assets\Scripts\Test\playerController.cs" />
+     <Compile Include="Assets\ladderMovement.cs" />
+     <Compile Include="Assets\playerRopeSwing.cs" />
+     <None Include="Assets\Shaders\Stencil Mask.shader" />
+     <None Include="Assets\Shaders\Stencil Object.shader" />
+ <Reference Include="UnityEngine.Advertisements">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Cecil">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/Mono.Cecil.dll</HintPath>
