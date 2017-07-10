@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShadowPath", "Assembly-CSharp.csproj", "{86C5E296-DC91-700B-9953-C48D41C272AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShadowPath", "Assembly-CSharp-Editor.csproj", "{50740E34-069E-A304-8057-E6A102735E7B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{86C5E296-DC91-700B-9953-C48D41C272AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86C5E296-DC91-700B-9953-C48D41C272AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86C5E296-DC91-700B-9953-C48D41C272AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86C5E296-DC91-700B-9953-C48D41C272AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50740E34-069E-A304-8057-E6A102735E7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50740E34-069E-A304-8057-E6A102735E7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50740E34-069E-A304-8057-E6A102735E7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50740E34-069E-A304-8057-E6A102735E7B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
