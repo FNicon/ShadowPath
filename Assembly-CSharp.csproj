@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\Test\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\Test\Interact.cs" />
      <Compile Include="Assets\Scripts\Test\Pause.cs" />
+     <Compile Include="Assets\Scripts\Test\PauseManager.cs" />
      <Compile Include="Assets\Scripts\Test\pickup.cs" />
      <Compile Include="Assets\Scripts\Test\playerController.cs" />
      <Compile Include="Assets\ladderMovement.cs" />

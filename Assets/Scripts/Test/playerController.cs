@@ -34,25 +34,6 @@ public class playerController : MonoBehaviour {
 		if  (isInputFire1()){
             //firing();
         }
-        if (isInputPause())
-        {
-            if (pauseScript.isPaused)
-            {
-                pauseScript.unfreezeObjects();
-                SpriteRenderer sprite;
-                sprite = gameObject.transform.GetComponent<SpriteRenderer>();
-                sprite.color = Color.white;
-                pauseScript.isPaused = false;
-            }
-            else
-            {
-                pauseScript.freezeObjects();
-                SpriteRenderer sprite;
-                sprite = gameObject.transform.GetComponent<SpriteRenderer>();
-                sprite.color = Color.cyan;
-                pauseScript.isPaused = true;
-            }
-        }
 	}
 
 	// Update is called once per frame
@@ -118,8 +99,4 @@ public class playerController : MonoBehaviour {
 			}
 		}
 	}*/
-    bool isInputPause()
-    {
-        return (Input.GetKeyDown(KeyCode.Escape));
-    }
 }
