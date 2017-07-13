@@ -13,10 +13,12 @@ public class playerController : MonoBehaviour {
 	//private bool facingRight;
 
 	private Interact interactObject;
-	//public Transform launchPod;
-	//public GameObject missile;
-	//float fireRate = 0.5f;
-	//float reloadTime = 0f;
+    //public Transform launchPod;
+    //public GameObject missile;
+    //float fireRate = 0.5f;
+    //float reloadTime = 0f;
+
+    public Pause pauseScript;
 
 	// Use this for initialization
 	void Start () {
@@ -30,18 +32,21 @@ public class playerController : MonoBehaviour {
 			}
 		}
 		if  (isInputFire1()){
-			//firing();
-		}
+            //firing();
+        }
 	}
 
 	// Update is called once per frame
 	void FixedUpdate () {
-		float horizontalSpeed;
-		//float verticalSpeed;
-		horizontalSpeed = inputHorizontal ();
-		//verticalSpeed = inputVertical ();
+        if (!pauseScript.isPaused)
+        {
+            float horizontalSpeed;
+            //float verticalSpeed;
+            horizontalSpeed = inputHorizontal();
+            //verticalSpeed = inputVertical ();
 
-		groundScript.moveHorizontal (horizontalSpeed);
+            groundScript.moveHorizontal(horizontalSpeed);
+        }
 	}
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Pick Up")) {
@@ -59,16 +64,30 @@ public class playerController : MonoBehaviour {
 		}
 	}
 	bool isInputJump() {
-		return (Input.GetAxis ("Jump") > 0);
+		return (Input.GetAxis ("Jump") > 0) && !pauseScript.isPaused;
 	}
 	bool isInputFire1() {
-		return (Input.GetAxisRaw("Fire1")>0);
+		return (Input.GetAxisRaw("Fire1")>0) && !pauseScript.isPaused;
 	}
 	float inputVertical() {
-		return(Input.GetAxis ("Vertical"));
+        if (pauseScript.isPaused)
+        {
+            return 0;
+        }
+        else
+        {
+            return (Input.GetAxis("Vertical"));
+        }
 	}
 	float inputHorizontal() {
-		return (Input.GetAxis ("Horizontal"));
+        if (pauseScript.isPaused)
+        {
+            return 0;
+        }
+        else
+        {
+            return (Input.GetAxis("Horizontal"));
+        }
 	}
 	/*void firing() {
 		if (Time.time > reloadTime) {
