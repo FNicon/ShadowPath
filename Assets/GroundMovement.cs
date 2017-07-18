@@ -7,7 +7,7 @@ public class GroundMovement : MonoBehaviour {
 	//Ground
 	public LayerMask groundLayer;
 	public Transform groundChecker;
-	private bool isTouchGround = false;
+	public bool isTouchGround = false;
 	private float groundCheckRadius = 0.5f;
 	private bool allowMove;
 	public int jumpCount;
@@ -21,7 +21,7 @@ public class GroundMovement : MonoBehaviour {
 	private bool facingRight;
 
 	//new
-	private bool takingOff = false;
+	public bool takingOff = false;
 	public float jumpVel;
 	
 	// Use this for initialization
@@ -76,24 +76,40 @@ public class GroundMovement : MonoBehaviour {
 			jumpCount = jumpCount - 1;
 		}
 		*/
+		/*
 		if (!takingOff) {
 			takingOff = true;
 			playerAnimation.SetBool ("isTouchGround", isTouchGround);
-			/*
-			if(playerBody.velocity.y < 8){
-				playerBody.AddForce (new Vector2 (0, jumpForce));
-			}
-			*/
 			if(playerBody.velocity.y <= 1){
 				playerBody.velocity = new Vector2(playerBody.velocity.x,jumpVel);
 			}
 			jumpCount = jumpCount - 1;
 		}
+		*/
+		takingOff = true;
+		playerAnimation.SetBool ("isTouchGround", isTouchGround);
+		if(playerBody.velocity.y <= 1){
+			playerBody.velocity = new Vector2(playerBody.velocity.x,jumpVel);
+		}
+		jumpCount = jumpCount - 1;
 
 	}
 	//ON GROUND
 	public void isOnGroundUpdate() {
 		isTouchGround = Physics2D.OverlapCircle (groundChecker.position, groundCheckRadius,groundLayer);
+		/*
+		if((bool)Physics2D.OverlapCircle (groundChecker.position, groundCheckRadius,groundLayer)){
+			if((bool)Physics2D.OverlapArea(new Vector2(groundChecker.position.x-groundCheckRadius,groundChecker.position.y+groundCheckRadius),new Vector2(groundChecker.position.x+groundCheckRadius,groundChecker.position.y),groundLayer)){
+				isTouchGround = false;
+			}
+			else{
+				isTouchGround = true;
+			}
+		}
+		else{
+					isTouchGround = false;
+		}
+		*/
 	}
 	public bool getTouchGround() {
 		return (isTouchGround);
@@ -111,10 +127,13 @@ public class GroundMovement : MonoBehaviour {
 	}
 
 	public void takingOffUpdate(){
+		/*
 		if (takingOff) {
 			if (!isTouchGround) {
 				takingOff = false;
 			}
 		}
+		*/
+
 	}
 }
