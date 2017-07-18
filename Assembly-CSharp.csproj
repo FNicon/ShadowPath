@@ -57,6 +57,7 @@
      <Compile Include="Assets\OptionMenuManager.cs" />
      <Compile Include="Assets\Score.cs" />
      <Compile Include="Assets\Scripts\Test\CameraFollow.cs" />
+     <Compile Include="Assets\Scripts\Test\Death.cs" />
      <Compile Include="Assets\Scripts\Test\Interact.cs" />
      <Compile Include="Assets\Scripts\Test\Pause.cs" />
      <Compile Include="Assets\Scripts\Test\PauseManager.cs" />

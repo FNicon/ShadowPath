@@ -8,16 +8,21 @@ public class GroundMovement : MonoBehaviour {
 	public LayerMask groundLayer;
 	public Transform groundChecker;
 	private bool isTouchGround = false;
-	private float groundCheckRadius = 0.2f;
+	private float groundCheckRadius = 0.5f;
 	private bool allowMove;
 	public int jumpCount;
 	public int maxJumpCount;
 	//Jump
 	public float jumpForce;
+
 	//Player
 	private Rigidbody2D playerBody;
 	private Animator playerAnimation;
 	private bool facingRight;
+
+	//new
+	private bool takingOff = false;
+	public float jumpVel;
 	
 	// Use this for initialization
 	void Start () {
@@ -35,6 +40,7 @@ public class GroundMovement : MonoBehaviour {
 		isOnGroundUpdate ();
 		resetJumpCount ();
 		jumpAnimation ();
+		takingOffUpdate ();
 	}
 	public void flipFacing() {
 		Vector3 newVector;
@@ -62,12 +68,28 @@ public class GroundMovement : MonoBehaviour {
 		playerAnimation.SetFloat ("verticalSpeed", playerBody.velocity.y);
 	}
 	public void jump() {
+		/*
 		if (jumpCount > 0) {
 			isTouchGround = false;
 			playerAnimation.SetBool ("isTouchGround", isTouchGround); 
 			playerBody.AddForce (new Vector2 (0, jumpForce));
 			jumpCount = jumpCount - 1;
 		}
+		*/
+		if (!takingOff) {
+			takingOff = true;
+			playerAnimation.SetBool ("isTouchGround", isTouchGround);
+			/*
+			if(playerBody.velocity.y < 8){
+				playerBody.AddForce (new Vector2 (0, jumpForce));
+			}
+			*/
+			if(playerBody.velocity.y <= 1){
+				playerBody.velocity = new Vector2(playerBody.velocity.x,jumpVel);
+			}
+			jumpCount = jumpCount - 1;
+		}
+
 	}
 	//ON GROUND
 	public void isOnGroundUpdate() {
@@ -86,5 +108,13 @@ public class GroundMovement : MonoBehaviour {
 	}
 	public void setAllowMove(bool isAllow) {
 		allowMove = isAllow;
+	}
+
+	public void takingOffUpdate(){
+		if (takingOff) {
+			if (!isTouchGround) {
+				takingOff = false;
+			}
+		}
 	}
 }

@@ -31,28 +31,28 @@ public class PauseManager : MonoBehaviour {
     {
         //menghilangkan menu pause
         GameObject menu, background;
-        menu = transform.FindChild("PauseMenu").gameObject;
-        background = transform.FindChild("PauseBackground").gameObject;
+        menu = transform.Find("PauseMenu").gameObject;
+        background = transform.Find("PauseBackground").gameObject;
         menu.active = false;
         background.active = false;
         //unfreeze game objects
         pauseScript.unfreezeObjects();
         //signaling that the game is unpaused
-        pauseScript.isPaused = false;
+        //pauseScript.isPaused = false;
     }
 
     public void pauseGame()
     {
         //memunculkan menu pause
         GameObject menu, background;
-        menu = transform.FindChild("PauseMenu").gameObject;
-        background = transform.FindChild("PauseBackground").gameObject;
+        menu = transform.Find("PauseMenu").gameObject;
+        background = transform.Find("PauseBackground").gameObject;
         menu.active = true;
         background.active = true;
         //freeze game objects
         pauseScript.freezeObjects();
         //signaling that the game is paused
-        pauseScript.isPaused = true;
+        //pauseScript.isPaused = true;
         //playing sfx
         sfx.onCancel();
     }

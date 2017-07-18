@@ -18,7 +18,13 @@ public class playerController : MonoBehaviour {
     //float fireRate = 0.5f;
     //float reloadTime = 0f;
 
-    public Pause pauseScript;
+    //public Pause pauseScript;
+
+    /**
+     *player is frozen if game is paused 
+     */
+    public bool immovable = false;
+
 
 	// Use this for initialization
 	void Start () {
@@ -26,10 +32,8 @@ public class playerController : MonoBehaviour {
 		//playerAnimation = GetComponent<Animator>();
 	}
 	void Update(){
-		if(isInputJump ()) {
-			if(groundScript.getTouchGround()) {
-				groundScript.jump ();
-			}
+		if(isInputJump () && groundScript.getTouchGround()) {
+			groundScript.jump ();
 		}
 		if  (isInputFire1()){
             //firing();
@@ -38,7 +42,7 @@ public class playerController : MonoBehaviour {
 
 	// Update is called once per frame
 	void FixedUpdate () {
-        if (!pauseScript.isPaused)
+        if (!immovable)
         {
             float horizontalSpeed;
             //float verticalSpeed;
@@ -64,13 +68,13 @@ public class playerController : MonoBehaviour {
 		}
 	}
 	bool isInputJump() {
-		return (Input.GetAxis ("Jump") > 0) && !pauseScript.isPaused;
+		return (Input.GetAxis ("Jump") > 0) && !immovable;
 	}
 	bool isInputFire1() {
-		return (Input.GetAxisRaw("Fire1")>0) && !pauseScript.isPaused;
+		return (Input.GetAxisRaw("Fire1")>0) && !immovable;
 	}
 	float inputVertical() {
-        if (pauseScript.isPaused)
+        if (immovable)
         {
             return 0;
         }
@@ -80,7 +84,7 @@ public class playerController : MonoBehaviour {
         }
 	}
 	float inputHorizontal() {
-        if (pauseScript.isPaused)
+        if (immovable)
         {
             return 0;
         }

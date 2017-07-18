@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Pause : MonoBehaviour {
 
+    public playerController player;
+
     private List<GameObject> dynamicObjects = new List<GameObject>();
     private List<GameObject> kinematicObjects = new List<GameObject>();
     private List<GameObject> staticObjects = new List<GameObject>();
@@ -101,6 +103,9 @@ public class Pause : MonoBehaviour {
             animation = singleObject.transform.GetComponent<Animator>();
             animation.enabled = false;
         }
+
+        player.immovable = true;
+        isPaused = true;
     }
 
     //unfreeze all objects in the scene
@@ -137,5 +142,8 @@ public class Pause : MonoBehaviour {
             animation = singleObject.transform.GetComponent<Animator>();
             animation.enabled = true;
         }
+
+        player.immovable = false;
+        isPaused = false;
     }
 }
