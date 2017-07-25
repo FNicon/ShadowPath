@@ -8,7 +8,7 @@ public class GroundMovement : MonoBehaviour {
 	public LayerMask groundLayer;
 	public Transform groundChecker;
 	private bool isTouchGround = false;
-	private float groundCheckRadius = 0.2f;
+	private float groundCheckRadius = 0.5f;
 	private bool allowMove;
 	public int jumpCount;
 	public int maxJumpCount;
