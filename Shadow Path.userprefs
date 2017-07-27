@@ -1,10 +1,12 @@
-﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Test\playerController.cs">
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Camera\CameraFollow.cs">
     <Files>
-      <File FileName="Assets\Scripts\Test\playerController.cs" Line="24" Column="2" />
-      <File FileName="Assets\Scripts\Test\pickup.cs" Line="15" Column="43" />
-      <File FileName="Assets\Scripts\Test\Interact.cs" Line="6" Column="19" />
+      <File FileName="Assets\Scripts\Player\playerController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Menu Manager\Runtime\Pause.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Menu Manager\Runtime\PauseManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Camera\CameraFollow.cs" Line="7" Column="9" />
+      <File FileName="Assets\Scripts\Player\GroundMovement.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
