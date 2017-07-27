@@ -33,14 +33,16 @@ public class DialogueManager : MonoBehaviour {
 	}
 
 	public void DisplayNextDialogue () {
-		if (sentences.Count == 0) {
-			EndDialogue ();
-			StopAllCoroutines ();
-		} else {
-			string sentence = sentences.Dequeue ();
-			StopAllCoroutines ();
-			StartCoroutine (TypeSentence (sentence));
+		dialogueAnimator.SetInteger("count", sentences.Count);
+		if (sentences.Count == 0)
+		{
+			EndDialogue();
+			return;
 		}
+
+		string sentence = sentences.Dequeue();
+		StopAllCoroutines();
+		StartCoroutine(TypeSentence(sentence));
 	}
 
 	IEnumerator TypeSentence (string sentence)
@@ -54,6 +56,7 @@ public class DialogueManager : MonoBehaviour {
 	}
 
 	void EndDialogue() {
+		sentences.Clear ();
 		dialogueAnimator.SetBool("isStartDialogue", false);
 	}
 }
