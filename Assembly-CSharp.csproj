@@ -63,6 +63,7 @@
      <Compile Include="Assets\Scripts\Test\PauseManager.cs" />
      <Compile Include="Assets\Scripts\Test\pickup.cs" />
      <Compile Include="Assets\Scripts\Test\playerController.cs" />
+     <Compile Include="Assets\VolumeConotroller.cs" />
      <Compile Include="Assets\ladderMovement.cs" />
      <Compile Include="Assets\playerRopeSwing.cs" />
      <None Include="Assets\Shaders\Stencil Mask.shader" />
