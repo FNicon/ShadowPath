@@ -1,9 +1,9 @@
+﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2008
-
-Project("{0DECFA3B-866A-8546-6EED-3D8382C8173A}") = "Shadow Path", "Assembly-CSharp.csproj", "{46855528-CD45-B05B-B264-5B70B24DDEBA}"
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shadow Path", "Assembly-CSharp.csproj", "{46855528-CD45-B05B-B264-5B70B24DDEBA}"
 EndProject
-Project("{0DECFA3B-866A-8546-6EED-3D8382C8173A}") = "Shadow Path", "Assembly-CSharp-Editor.csproj", "{C9ADAABD-9E2E-6EE3-A2C4-FA05F7B9FD6B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shadow Path", "Assembly-CSharp-Editor.csproj", "{C9ADAABD-9E2E-6EE3-A2C4-FA05F7B9FD6B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,7 +23,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																																																																																																																												GlobalSection(MonoDevelopProperties) = preSolution
+																																																																																																																																				GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
@@ -42,5 +42,4 @@ Global
 		$3.inheritsScope = text/plain
 		$3.scope = text/plain
 	EndGlobalSection
-
 EndGlobal

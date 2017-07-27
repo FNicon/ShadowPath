@@ -1,10 +1,10 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\VolumeConotroller.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Test\PauseManager.cs">
     <Files>
       <File FileName="Assets\Scripts\Test\Pause.cs" Line="1" Column="1" />
-      <File FileName="Assets\GroundMovement.cs" Line="1" Column="1" />
       <File FileName="Assets\VolumeConotroller.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Test\PauseManager.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

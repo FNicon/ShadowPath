@@ -1,7 +1,6 @@
-Temp/
-
 Library/
-*.pidb
+ Temp/
+ *.pidb
  *.csproj
  *.unityproj
  *.sln
