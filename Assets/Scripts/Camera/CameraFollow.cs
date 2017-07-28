@@ -21,7 +21,7 @@ public class CameraFollow : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 		//UpdateCameraXPosition();
-		UpdateCameraYPosition ();
+		UpdateCameraPosition ();
 	}
 	void UpdateCameraXPosition() {
 		Vector3 newCameraPosition;
@@ -48,5 +48,19 @@ public class CameraFollow : MonoBehaviour {
 		//if (transform.position.y > maximumY) {
 			//transform.position = new Vector3(transform.position.x,maximumY,transform.position.z);
 		//}
+	}
+	void UpdateCameraPosition(){
+		Vector3 newCameraPosition;
+		float newX, newY;
+		newX = follow.position.x + offset.x;
+		newY = follow.position.y + offset.y;
+		if (newX > maximumX || newX < minimumX) {
+			newX = transform.position.x;
+		}
+		if (newY > maximumY || newY < minimumY) {
+			newY = transform.position.y;
+		}
+		newCameraPosition = new Vector3(newX,newY,transform.position.z);
+		transform.position = Vector3.Lerp (transform.position, newCameraPosition, smoothMotion * Time.deltaTime);
 	}
 }

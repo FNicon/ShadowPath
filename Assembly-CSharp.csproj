@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Audio\AudioButton.cs" />
+     <Compile Include="Assets\Scripts\Audio\VolumeConotroller.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\DataKeeper\CheckPoint.cs" />
      <Compile Include="Assets\Scripts\DataKeeper\CheckPointManager.cs" />
@@ -78,7 +79,7 @@
      <Compile Include="Assets\Scripts\Player\playerController.cs" />
      <Compile Include="Assets\Scripts\Player\playerRopeMovement.cs" />
      <Compile Include="Assets\Scripts\Player\playerRopeSwing.cs" />
-     <Compile Include="Assets\VolumeConotroller.cs" />
+     <Compile Include="Assets\Scripts\TutorialMessageFade.cs" />
      <None Include="Assets\Shaders\Stencil Mask.shader" />
      <None Include="Assets\Shaders\Stencil Object.shader" />
  <Reference Include="UnityEngine.UI">
