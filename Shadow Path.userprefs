@@ -1,15 +1,16 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Dialogue\DialogueManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Scene\SceneLoader.cs">
     <Files>
-      <File FileName="Assets\Scripts\Player\playerController.cs" Line="70" Column="49" />
-      <File FileName="Assets\Scripts\Menu Manager\Runtime\Pause.cs" Line="69" Column="59" />
-      <File FileName="Assets\Scripts\Menu Manager\Runtime\PauseManager.cs" Line="11" Column="2" />
-      <File FileName="Assets\Scripts\Camera\CameraFollow.cs" Line="6" Column="28" />
-      <File FileName="Assets\Scripts\Player\GroundMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Dialogue\DialogueManager.cs" Line="43" Column="41" />
-      <File FileName="Assets\Scripts\Dialogue\DialogueTrigger.cs" Line="13" Column="3" />
+      <File FileName="Assets\Scripts\Dialogue\DialogueManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Dialogue\DialogueTrigger.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Dialogue\Dialogue.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Dialogue\Notification.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Dialogue\NotificationManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Dialogue\NotificationTrigger.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player\playerController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\TutorialMessageFade.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Scene\SceneLoader.cs" Line="36" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

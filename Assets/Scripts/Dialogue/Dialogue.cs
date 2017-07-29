@@ -7,6 +7,7 @@ public class Dialogue {
 	public string actorName;
 	[TextArea(3,10)]
 	public string[] dialogues;
+	public float dialogueDuration;
 
 	// Use this for initialization
 	void Start () {
