@@ -17,7 +17,7 @@ public class MainMenuManager : MonoBehaviour {
 	}
 	public void StartGame() {
 		//int nextLevel;
-		SceneManager.LoadScene ("Tutorial Scene");
+		SceneManager.LoadScene ("TestScene");
     }
 	public void Exit() {
 		exitPanel.SetActive (true);

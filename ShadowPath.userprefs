@@ -1,9 +1,8 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\TutorialMessageFade.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Menu Manager\Runtime\Pause.cs">
     <Files>
-      <File FileName="Assets\VolumeConotroller.cs" Line="1" Column="1" />
-      <File FileName="Assets\TutorialMessageFade.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Menu Manager\Runtime\Pause.cs" Line="148" Column="37" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
