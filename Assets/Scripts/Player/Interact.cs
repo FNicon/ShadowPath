@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Interact : MonoBehaviour {
 	public string show;
