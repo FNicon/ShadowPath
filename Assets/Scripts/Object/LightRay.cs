@@ -20,6 +20,17 @@ public class LightRay : MonoBehaviour {
 	public MeshFilter viewMeshFilter;
 	Mesh viewMesh;
 
+	private List<EdgeCollider2D> shadowSurfaces = new List<EdgeCollider2D>();
+	public float shadowSurfaceMinLength;
+	public int hitEdgesCount;
+
+	public float pingX;
+	public float pingY;
+	public float pingX1;
+	public float pingY1;
+	public float pingX2;
+	public float pingY2;
+
 	// Use this for initialization
 	void Start () {
 		newVertices = new List<Vector2> ();
@@ -47,6 +58,8 @@ public class LightRay : MonoBehaviour {
 		float stepAngleSize = lightAngle / stepCount;
 		List<Vector3> viewPoints = new List<Vector3>();
 		viewCastInfo oldViewCast = new viewCastInfo ();
+		List<viewCastInfo> hitEdges = new List<viewCastInfo> ();
+		List<Vector3> hitEdgesNow = new List<Vector3> ();
 		for (int i = 0; i<= stepCount; i++) {
 			float angle = transform.eulerAngles.y - lightAngle/2 + stepAngleSize*i;
 			//Debug.DrawLine (transform.position,transform.position + DirectionFromAngle (angle,true)*lightRadius,Color.red);
@@ -65,6 +78,9 @@ public class LightRay : MonoBehaviour {
 			}
 			viewPoints.Add (newViewCast.point);
 			oldViewCast = newViewCast;
+			if (newViewCast.hit) {
+				hitEdgesNow.Add(newViewCast.point);
+			}
 		}
 		int vertexCount = viewPoints.Count + 1;
 		Vector3[] vertices = new Vector3[vertexCount];
@@ -78,11 +94,15 @@ public class LightRay : MonoBehaviour {
 				triangles[i*3+1] = i + 1;
 				triangles[i*3+2] = i + 2;
 			}
+			pingX = vertices [i + 1].x;
+			pingY = vertices [i + 1].y;
 		}
 		viewMesh.Clear ();
 		viewMesh.vertices = vertices;
 		viewMesh.triangles = triangles;
 		viewMesh.RecalculateNormals ();
+
+		constructShadowSurface (farEdge(hitEdgesNow));
 	}
 	EdgeInfo FindEdge(viewCastInfo minViewCast, viewCastInfo maxViewCast) {
 		float minAngle = minViewCast.angle;
@@ -141,4 +161,157 @@ public class LightRay : MonoBehaviour {
 		newVertices.Add (new Vector2 (1f, 1f));
 		shadowCollider.points = newVertices.ToArray();
 	}*/
+
+	float countDistance(Vector3 coordinate){
+		float output,deltaX,deltaY;
+		deltaX = coordinate.x - transform.position.x;
+		deltaY = coordinate.y - transform.position.y;
+		output = Mathf.Sqrt ((deltaX * deltaX) + (deltaY * deltaY));
+		return output;
+	}
+
+	List<Vector3> farEdge(List<Vector3> inputList){
+		List<Vector3> outputList = new List<Vector3> ();
+		for (int i = 0; i < inputList.Count; i++) {
+			bool surfaceMinLengthExceeded,closerThanBefore,closerThanAfter;
+
+			if (i < inputList.Count - 1) {
+				surfaceMinLengthExceeded = Mathf.Abs (countDistance (inputList [i]) - countDistance (inputList [i + 1])) > shadowSurfaceMinLength;
+			} else {
+				surfaceMinLengthExceeded = Mathf.Abs (countDistance (inputList [i]) - countDistance (inputList [0])) > shadowSurfaceMinLength;
+			}
+
+			/*
+			if (i == 0) {
+				closerThanBefore = countDistance (inputList [i]) - countDistance (inputList [inputList.Count - 1]) > -shadowSurfaceMinLength;
+			} else {
+				closerThanBefore = countDistance (inputList [i]) - countDistance (inputList [i - 1]) > -shadowSurfaceMinLength;
+			}
+
+			if (i == inputList.Count) {
+				closerThanAfter = countDistance (inputList [i]) - countDistance (inputList [0]) > -shadowSurfaceMinLength;
+			} else {
+				closerThanAfter = countDistance (inputList [i]) - countDistance (inputList [i+1]) > -shadowSurfaceMinLength;
+			}
+
+			if (closerThanBefore) {
+				pingX1 = 1;
+			}
+			if (closerThanAfter) {
+				pingY1 = 1;
+			}
+			surfaceMinLengthExceeded = closerThanAfter || closerThanBefore;
+			*/
+			if (surfaceMinLengthExceeded) {
+				/*
+				outputList.Add(transform.InverseTransformPoint(inputList[i]));
+				if (i == inputList.Count) {
+					outputList.Add (transform.InverseTransformPoint (inputList [0]));
+				} else {
+					outputList.Add(transform.InverseTransformPoint(inputList[i+1]));
+				}
+				*/
+				if (countDistance (inputList [i]) < countDistance (inputList [(i + 1) % inputList.Count])) {
+					outputList.Add(transform.InverseTransformPoint(inputList[i]));
+				} else {
+					outputList.Add (transform.InverseTransformPoint (inputList [(i + 1) % inputList.Count]));
+				}
+			}
+		}
+		//pingX1 = outputList [0].x;
+		//pingY1 = outputList [0].y;
+		return outputList;
+	}
+
+	float realDistance (Vector3 coordinate){
+		float output,deltaX,deltaY;
+		deltaX = coordinate.x * transform.lossyScale.x;
+		deltaY = coordinate.y * transform.lossyScale.y;
+		output = Mathf.Sqrt ((deltaX * deltaX) + (deltaY * deltaY));
+		return output;
+	}
+
+	void constructShadowSurface(List<Vector3> hitEdges){
+		hitEdgesCount = hitEdges.Count;
+
+		int existingSurfaces = shadowSurfaces.Count;
+		int newSurfaces = 0;
+
+
+		for (int i = 0; i < hitEdges.Count; i++) {
+			if (newSurfaces + 1 > existingSurfaces) {
+				shadowSurfaces.Add (new EdgeCollider2D ());
+			}
+			shadowSurfaces [newSurfaces] = gameObject.AddComponent<EdgeCollider2D> ();
+			Vector2[] surfaceEdges = new Vector2[2];
+			surfaceEdges [0] = new Vector2 (hitEdges [i].x, hitEdges [i].y);
+			float edge2x, edge2y;
+			/*
+			edge2x = transform.position.x + lightRadius / hitEdges [i].distance * (hitEdges [i].point.x - transform.position.x);
+			edge2y = transform.position.y + lightRadius / hitEdges [i].distance * (hitEdges [i].point.y - transform.position.y);
+			*/
+			edge2x = (lightRadius / realDistance(hitEdges[i])) * (hitEdges [i].x);
+			edge2y = (lightRadius / realDistance(hitEdges[i])) * (hitEdges [i].y);
+			surfaceEdges [1] = new Vector2 (edge2x, edge2y);
+			shadowSurfaces [newSurfaces].points = surfaceEdges;
+			newSurfaces++;
+		}
+
+		int deadcount = 0;
+
+		EdgeCollider2D[] surfaces = GetComponents<EdgeCollider2D> ();
+		foreach (EdgeCollider2D surface in surfaces) {
+			if (deadcount < newSurfaces) {
+				surface.points = shadowSurfaces [deadcount].points;
+				deadcount++;
+				pingX2 = surface.points [0].x;
+				pingY2 = surface.points [0].y;
+			} else {
+				Destroy (surface);
+			}
+		}
+
+		/*
+		while (newSurfaces < shadowSurfaces.Count) {
+			EdgeCollider2D destroyCandidate = shadowSurfaces [newSurfaces];
+			shadowSurfaces.RemoveAt (newSurfaces);
+			Destroy (destroyCandidate);
+			gameObject.
+		}
+		*/
+
+
+
+		/*
+		int existingSurfaces = shadowSurfaces.Count;
+		int newSurfaces = 0;
+		for (int i = 0; i < hitEdges.Count; i++) {
+			bool surfaceMinLengthExceeded;
+			if (i < hitEdges.Count - 1) {
+				surfaceMinLengthExceeded = Mathf.Abs (hitEdges [i].distance - hitEdges [i + 1].distance) > shadowSurfaceMinLength;
+			} else {
+				surfaceMinLengthExceeded = Mathf.Abs (hitEdges [i].distance - hitEdges [1].distance) > shadowSurfaceMinLength;
+			}
+			if (surfaceMinLengthExceeded) {
+				
+				newSurfaces++;
+				if (newSurfaces > existingSurfaces) {
+					//shadowSurfaces.Add (new EdgeCollider2D ());
+				}
+				shadowSurfaces [newSurfaces-1] = gameObject.AddComponent<EdgeCollider2D> ();
+				Vector2[] surfaceEdges = new Vector2[2];
+				surfaceEdges [0] = new Vector2 (hitEdges [i].point.x, hitEdges [i].point.y);
+				float edge2x, edge2y;
+				edge2x = transform.position.x + lightRadius / hitEdges [i].distance * (hitEdges [i].point.x - transform.position.x);
+				edge2y = transform.position.y + lightRadius / hitEdges [i].distance * (hitEdges [i].point.y - transform.position.y);
+				surfaceEdges [1] = new Vector2 (edge2x, edge2y);
+				shadowSurfaces [newSurfaces-1].points = surfaceEdges;
+
+			}
+		}
+		if (newSurfaces < existingSurfaces) {
+			shadowSurfaces.RemoveRange (newSurfaces, existingSurfaces - newSurfaces);
+		}
+		*/
+	}
 }
