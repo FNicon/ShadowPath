@@ -44,7 +44,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 1
-  controlID: 61
+  controlID: 60
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -68,7 +68,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 62
+  controlID: 61
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -178,7 +178,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 63
+  controlID: 62
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -202,7 +202,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 64
+  controlID: 63
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -414,9 +414,9 @@ MonoBehaviour:
     height: 336
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 88280300
-    m_LastClickedID: 206984
-    m_ExpandedIDs: 88e3f2ff96dbf3ff52e8f3ff38ecf3ff46f7f3ff84cff4ffded7f4ffb0faf4ff7a7ff5fff87ff5ff76cdf5ffcecdf5ffb4d1f5ff6ee9f5ff84b9f8ffccbaf8ffd0baf8ffc0dcf8fff831f9ff5634f9fff85efcffa86efcffe4a5fcff6642fdff56a0fdff1ccbfdff1af7fdff2092feff449afeff4ab0feff68f9feff5404fffff665fffff8a1ffff1afcffff000000006039000086120100b4250200ca290200d82f020040890200e68c0200128d02006e9302007a940200169802002e9c0200dcce0200
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: 1afcffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -685,33 +685,33 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scenes/Test
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 80
   m_LastFolders:
-  - Assets/Scenes/Test
+  - Assets/Scripts
   m_LastFoldersGridSize: 80
   m_LastProjectPath: C:\Users\Finiko\Documents\Game\Unity\Latihan\Shadow Path
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 164}
-    m_SelectedIDs: de260000
-    m_LastClickedID: 9950
-    m_ExpandedIDs: 0000000054260000fe2600003427000046270000c427000018280000602800009628000064290000c0290000f2290000f6290000642a00006a2a00007c2a0000cc2f0000fe2f00003a3000005e310000c6310000003200000a3200000c3200000e32000000ca9a3bffffff7f
+    m_SelectedIDs: 80290000
+    m_LastClickedID: 10624
+    m_ExpandedIDs: 000000005e2600000e2700004627000058270000d8270000342800007e280000b428000086290000e2290000142a0000182a0000882a00008e2a0000a22a00002630000068300000ae3000002832000090320000ca320000d4320000d6320000d832000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Scenes
-      m_OriginalName: Scenes
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 9982
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 12}
     m_SearchString: 
@@ -725,7 +725,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000054260000fe260000182700003427000046270000c42700001828000060280000962800005e29000064290000c0290000f2290000f6290000642a00006a2a00007c2a0000cc2f0000fe2f00003a3000005e310000c6310000003200000a3200000c3200000e320000
+    m_ExpandedIDs: 000000005e2600000e2700004627000058270000d8270000342800007e280000b428000086290000e2290000142a0000182a0000882a00008e2a0000a22a00002630000068300000ae3000002832000090320000ca320000d4320000d6320000d8320000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -752,7 +752,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 06230000ac1d0000181e0000641d00007a1d0000021e0000921c0000e41c0000dc1c00002a1c000038f2fdff6a390000502000006c20000074200000a41e0000c41e0000fe1f00007a2b0000ea1f000052200000862000008e2000008a2000005e200000f0280000b4270000b22700007e2c00008c260000de260000d62600005c2d00006c2d0000842d00007a2700003c880100722800003a2800001260000000000000ca280000ec2600003a2900004a270000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -777,7 +777,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 19}
     m_GridSize: 80
   m_DirectoriesAreaWidth: 150
 --- !u!114 &21
