@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class Dialogue {
-	public string actorName;
+public class Notification {
 	[TextArea(3,10)]
-	public string[] dialogues;
-	public float dialogueDuration;
+	public string[] notif;
+	public float notificationDuration;
 
 	// Use this for initialization
 	void Start () {

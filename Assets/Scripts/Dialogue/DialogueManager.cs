@@ -9,6 +9,7 @@ public class DialogueManager : MonoBehaviour {
 
 	private Animator dialogueAnimator;
 	private Queue<string> sentences;
+	private float durationPerDialogue;
 
 	// Use this for initialization
 	void Start () {
@@ -21,19 +22,17 @@ public class DialogueManager : MonoBehaviour {
 		dialogueAnimator.SetBool("isStartDialogue", true);
 
 		actorNameText.text = inputDialogue.actorName;
-
+		durationPerDialogue = inputDialogue.dialogueDuration;
 		sentences.Clear();
 
 		foreach (string sentence in inputDialogue.dialogues)
 		{
 			sentences.Enqueue(sentence);
 		}
-
 		DisplayNextDialogue();
 	}
 
 	public void DisplayNextDialogue () {
-		dialogueAnimator.SetInteger("count", sentences.Count);
 		if (sentences.Count == 0)
 		{
 			EndDialogue();
@@ -43,6 +42,7 @@ public class DialogueManager : MonoBehaviour {
 		string sentence = sentences.Dequeue();
 		StopAllCoroutines();
 		StartCoroutine(TypeSentence(sentence));
+		StartCoroutine(duration());
 	}
 
 	IEnumerator TypeSentence (string sentence)
@@ -53,6 +53,11 @@ public class DialogueManager : MonoBehaviour {
 			dialogueText.text += letter;
 			yield return null;
 		}
+	}
+
+	IEnumerator duration () {
+		yield return new WaitForSeconds (durationPerDialogue);
+		DisplayNextDialogue ();
 	}
 
 	void EndDialogue() {

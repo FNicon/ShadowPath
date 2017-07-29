@@ -57,9 +57,13 @@
      <Compile Include="Assets\Scripts\DataKeeper\CheckPoint.cs" />
      <Compile Include="Assets\Scripts\DataKeeper\CheckPointManager.cs" />
      <Compile Include="Assets\Scripts\DataKeeper\SaveLoad.cs" />
+     <Compile Include="Assets\Scripts\DataKeeper\Soul.cs" />
      <Compile Include="Assets\Scripts\Dialogue\Dialogue.cs" />
      <Compile Include="Assets\Scripts\Dialogue\DialogueManager.cs" />
      <Compile Include="Assets\Scripts\Dialogue\DialogueTrigger.cs" />
+     <Compile Include="Assets\Scripts\Dialogue\Notification.cs" />
+     <Compile Include="Assets\Scripts\Dialogue\NotificationManager.cs" />
+     <Compile Include="Assets\Scripts\Dialogue\NotificationTrigger.cs" />
      <Compile Include="Assets\Scripts\Enemy\Enemy1AI.cs" />
      <Compile Include="Assets\Scripts\Enemy\Enemy2.cs" />
      <Compile Include="Assets\Scripts\Enemy\Movement\UpDownMovement.cs" />
@@ -85,6 +89,7 @@
      <Compile Include="Assets\Scripts\Player\playerRopeSwing.cs" />
      <Compile Include="Assets\Scripts\Player\PushPullMovement.cs" />
      <Compile Include="Assets\Scripts\Player\Score.cs" />
+     <Compile Include="Assets\Scripts\Scene\SceneLoader.cs" />
      <Compile Include="Assets\Scripts\TutorialMessageFade.cs" />
      <None Include="Assets\Shaders\Stencil Mask.shader" />
      <None Include="Assets\Shaders\Stencil Object.shader" />

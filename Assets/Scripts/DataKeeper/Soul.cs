@@ -2,12 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class Dialogue {
-	public string actorName;
-	[TextArea(3,10)]
-	public string[] dialogues;
-	public float dialogueDuration;
+public class Soul : MonoBehaviour {
+	public int soulID;
+	public string soulName;
 
 	// Use this for initialization
 	void Start () {
