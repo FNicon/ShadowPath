@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\followCamera.cs" />
      <Compile Include="Assets\Scripts\Audio\AudioButton.cs" />
      <Compile Include="Assets\Scripts\Audio\VolumeConotroller.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraFollow.cs" />
@@ -91,6 +92,7 @@
      <Compile Include="Assets\Scripts\Player\Score.cs" />
      <Compile Include="Assets\Scripts\Scene\SceneLoader.cs" />
      <Compile Include="Assets\Scripts\TutorialMessageFade.cs" />
+     <Compile Include="Assets\shadowWalk.cs" />
      <None Include="Assets\Shaders\Stencil Mask.shader" />
      <None Include="Assets\Shaders\Stencil Object.shader" />
  <Reference Include="UnityEngine.UI">

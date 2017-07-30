@@ -1,17 +1,9 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Object\LightRay.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\shadowWalk.cs">
     <Files>
-      <File FileName="Assets\Scripts\Dialogue\DialogueManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Dialogue\DialogueTrigger.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Dialogue\Dialogue.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Dialogue\Notification.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Dialogue\NotificationManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Dialogue\NotificationTrigger.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\playerController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\TutorialMessageFade.cs" Line="19" Column="18" />
-      <File FileName="Assets\Scripts\Scene\SceneLoader.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Object\LightRay.cs" Line="82" Column="21" />
+      <File FileName="Assets\shadowWalk.cs" Line="42" Column="5" />
+      <File FileName="Assets\Scripts\Player\playerController.cs" Line="24" Column="46" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

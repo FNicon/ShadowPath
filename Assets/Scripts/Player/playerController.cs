@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class playerController : MonoBehaviour {
+	private shadowWalk shadowScript;
 	private GroundMovement groundScript;
 	private LadderMovement ladderScript;
 	public Death deathScript;
@@ -20,6 +21,7 @@ public class playerController : MonoBehaviour {
     void Start () {
         isDeath = false;
 		counter = GetComponent<Score> ();
+		shadowScript = GetComponent<shadowWalk> ();
 		groundScript = GetComponent<GroundMovement> ();
 		ladderScript = GetComponent<LadderMovement> ();
 		pushPullScript = GetComponent<PushPullMovement> ();
@@ -41,9 +43,14 @@ public class playerController : MonoBehaviour {
             }
             if (isInputFire1())
             {
-                //firing();
+				if (shadowScript.isActive) {
+					shadowScript.activate ();
+				} else {
+					shadowScript.deactivate ();
+					//firing();
+				}
             }
-        }
+		}
 	}
 
 	// Update is called once per frame

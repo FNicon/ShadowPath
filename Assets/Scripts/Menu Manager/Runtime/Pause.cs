@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Pause : MonoBehaviour {
 	public playerController player;
@@ -143,4 +144,8 @@ public class Pause : MonoBehaviour {
 		player.immovable = false;
 		isPaused = false;
     }
+
+	public void exitGame(){
+		SceneManager.LoadScene ("Main Menu");
+	}
 }
