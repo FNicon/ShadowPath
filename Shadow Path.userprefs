@@ -1,20 +1,17 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\TutorialMessageFade.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\platform.cs">
     <Files>
+      <File FileName="Assets\Scripts\Player\playerController.cs" Line="78" Column="49" />
+      <File FileName="Assets\Scripts\Menu Manager\Runtime\Death.cs" Line="1" Column="1" />
       <File FileName="Assets\shadowWalk.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\playerController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\pickup.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\GroundMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\Interact.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\LadderMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\LedgeMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\playerRopeMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\PushPullMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\DataKeeper\Soul.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\DataKeeper\SaveLoad.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\Score.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\TutorialMessageFade.cs" Line="18" Column="31" />
+      <File FileName="Assets\Scripts\Windmill.cs" Line="16" Column="46" />
+      <File FileName="Assets\Scripts\Menu Manager\Runtime\Pause.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Menu Manager\Runtime\PauseManager.cs" Line="12" Column="21" />
+      <File FileName="Assets\Enemy\Movement\UpDownMovement.cs" Line="17" Column="1" />
+      <File FileName="Assets\Enemy\Enemy1AI.cs" Line="1" Column="1" />
+      <File FileName="Assets\Enemy\Enemy2.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\platform.cs" Line="20" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

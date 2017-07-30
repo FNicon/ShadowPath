@@ -16,6 +16,7 @@ public class playerController : MonoBehaviour {
     private bool isDeath;
 	public bool immovable = false;
 	//private Transform pullObjectPosition;
+	public bool ping = false;
 
     // Use this for initialization
     void Start () {
@@ -43,7 +44,8 @@ public class playerController : MonoBehaviour {
             }
             if (isInputFire1())
             {
-				if (shadowScript.isActive) {
+				ping = shadowScript.isActive;
+				if (!shadowScript.isActive) {
 					shadowScript.activate ();
 				} else {
 					shadowScript.deactivate ();
@@ -94,7 +96,8 @@ public class playerController : MonoBehaviour {
 		return (Input.GetAxis ("Jump") > 0 && !immovable);
 	}
 	bool isInputFire1() {
-		return (Input.GetAxisRaw("Fire1")>0 && !immovable);
+		//return (Input.GetAxisRaw("Fire1")>0 && !immovable);
+		return (Input.GetButtonDown("Fire1") && !immovable);
 	}
 	float inputVertical() {
 		if (immovable) {

@@ -80,6 +80,7 @@
      <Compile Include="Assets\Scripts\Object\LightRay.cs" />
      <Compile Include="Assets\Scripts\Object\Rope.cs" />
      <Compile Include="Assets\Scripts\Object\RopeSegment.cs" />
+     <Compile Include="Assets\Scripts\platform.cs" />
      <Compile Include="Assets\Scripts\Player\GroundMovement.cs" />
      <Compile Include="Assets\Scripts\Player\Interact.cs" />
      <Compile Include="Assets\Scripts\Player\LadderMovement.cs" />
@@ -92,6 +93,7 @@
      <Compile Include="Assets\Scripts\Player\Score.cs" />
      <Compile Include="Assets\Scripts\Scene\SceneLoader.cs" />
      <Compile Include="Assets\Scripts\TutorialMessageFade.cs" />
+     <Compile Include="Assets\Scripts\Windmill.cs" />
      <Compile Include="Assets\shadowWalk.cs" />
      <None Include="Assets\Shaders\Stencil Mask.shader" />
      <None Include="Assets\Shaders\Stencil Object.shader" />
