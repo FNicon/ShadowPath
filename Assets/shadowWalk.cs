@@ -25,9 +25,9 @@ public class shadowWalk : MonoBehaviour {
 		shadowRealm.SetActive (true);
 		GameObject[] allObject = GameObject.FindObjectsOfType<GameObject> ();
 		foreach (GameObject anObject in allObject) {
-			if (anObject.layer == 14) {
+			if (anObject.layer == 13) {
 				ping = anObject.name;
-				anObject.layer = 15;
+				anObject.layer = 14;
 			}
 		}
 		//player.layer = LayerMask.NameToLayer ("ShadowPlayer");
@@ -40,9 +40,9 @@ public class shadowWalk : MonoBehaviour {
 		shadowRealm.SetActive (false);
 		GameObject[] allObject = GameObject.FindObjectsOfType<GameObject> ();
 		foreach (GameObject anObject in allObject) {
-			if (anObject.layer == 15) {
+			if (anObject.layer == 14) {
 				ping = anObject.name;
-				anObject.layer = 14;
+				anObject.layer = 13;
 			}
 		}
 		//player.layer = LayerMask.NameToLayer ("Default");
