@@ -171,6 +171,7 @@ public class LightRay : MonoBehaviour {
 	}
 
 	List<Vector3> farEdge(List<Vector3> inputList){
+		pingX = inputList.Count;
 		List<Vector3> outputList = new List<Vector3> ();
 		for (int i = 0; i < inputList.Count; i++) {
 			bool surfaceMinLengthExceeded,closerThanBefore,closerThanAfter;
@@ -220,6 +221,7 @@ public class LightRay : MonoBehaviour {
 		}
 		//pingX1 = outputList [0].x;
 		//pingY1 = outputList [0].y;
+		pingY = outputList.Count;
 		return outputList;
 	}
 
