@@ -11,6 +11,7 @@ public class UpDownMovement : MonoBehaviour {
 	public float currentSpeed;
 	private float negator;
 	private Rigidbody2D body;
+	public float ping;
 
 	// Use this for initialization
 	void Start () {
@@ -36,8 +37,10 @@ public class UpDownMovement : MonoBehaviour {
 			currentTarget = downTarget;
 			movingDown = true;
 			currentSpeed = maxSpeed;
-		} else {
 		}
-		body.velocity = new Vector2 (0, negator * currentSpeed);
+			
+		//body.velocity = new Vector2 (0, negator * currentSpeed);
+		//transform.position.y = transform.position.y + (negator * currentSpeed);
+		transform.position = transform.position + new Vector3 (0, negator * currentSpeed ,0);
 	}
 }

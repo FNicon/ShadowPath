@@ -86,6 +86,8 @@
      <Compile Include="Assets\Scripts\Player\playerRopeSwing.cs" />
      <Compile Include="Assets\Scripts\Scene\SceneLoader.cs" />
      <Compile Include="Assets\Scripts\TutorialMessageFade.cs" />
+     <Compile Include="Assets\ShadowRealmInvisible.cs" />
+     <Compile Include="Assets\ShadowRealmVisible.cs" />
      <Compile Include="Assets\followCamera.cs" />
      <Compile Include="Assets\shadowWalk.cs" />
      <None Include="Assets\Shaders\Stencil Mask.shader" />
