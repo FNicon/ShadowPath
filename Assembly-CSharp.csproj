@@ -46,8 +46,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Enemy\Enemy1AI.cs" />
+     <Compile Include="Assets\Enemy\Enemy2.cs" />
+     <Compile Include="Assets\Enemy\Movement\UpDownMovement.cs" />
      <Compile Include="Assets\LoadingScreenFade.cs" />
      <Compile Include="Assets\LoadingScreenScaler.cs" />
+     <Compile Include="Assets\Scripts\AchievmentTrigger.cs" />
      <Compile Include="Assets\Scripts\Audio\AudioButton.cs" />
      <Compile Include="Assets\Scripts\Audio\VolumeConotroller.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraFollow.cs" />
@@ -61,9 +65,6 @@
      <Compile Include="Assets\Scripts\Dialogue\Notification.cs" />
      <Compile Include="Assets\Scripts\Dialogue\NotificationManager.cs" />
      <Compile Include="Assets\Scripts\Dialogue\NotificationTrigger.cs" />
-     <Compile Include="Assets\Scripts\Enemy\Enemy1AI.cs" />
-     <Compile Include="Assets\Scripts\Enemy\Enemy2.cs" />
-     <Compile Include="Assets\Scripts\Enemy\Movement\UpDownMovement.cs" />
      <Compile Include="Assets\Scripts\Menu Manager\ExitMenuManager.cs" />
      <Compile Include="Assets\Scripts\Menu Manager\ExtraMenuManager.cs" />
      <Compile Include="Assets\Scripts\Menu Manager\MainMenuManager.cs" />
@@ -88,6 +89,8 @@
      <Compile Include="Assets\Scripts\Player\playerRopeSwing.cs" />
      <Compile Include="Assets\Scripts\Scene\SceneLoader.cs" />
      <Compile Include="Assets\Scripts\TutorialMessageFade.cs" />
+     <Compile Include="Assets\Scripts\Windmill.cs" />
+     <Compile Include="Assets\Scripts\platform.cs" />
      <Compile Include="Assets\ShadowRealmInvisible.cs" />
      <Compile Include="Assets\ShadowRealmVisible.cs" />
      <Compile Include="Assets\followCamera.cs" />
