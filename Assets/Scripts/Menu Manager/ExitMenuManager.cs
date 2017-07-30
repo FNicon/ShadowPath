@@ -19,7 +19,7 @@ public class ExitMenuManager : MonoBehaviour {
 	}
 	public void YesButton() {
 		if (Application.isEditor) {
-			UnityEditor.EditorApplication.isPlaying = false;
+			//UnityEditor.EditorApplication.isPlaying = false;
 		} else {
 			Application.Quit ();
 		}

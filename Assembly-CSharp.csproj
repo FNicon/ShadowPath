@@ -55,6 +55,7 @@
      <Compile Include="Assets\Enemy\Enemy2.cs" />
      <Compile Include="Assets\Enemy\Movement\UpDownMovement.cs" />
      <Compile Include="Assets\followCamera.cs" />
+     <Compile Include="Assets\Scripts\AchievmentTrigger.cs" />
      <Compile Include="Assets\Scripts\Audio\AudioButton.cs" />
      <Compile Include="Assets\Scripts\Audio\VolumeConotroller.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraFollow.cs" />
