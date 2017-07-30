@@ -10,6 +10,7 @@ public class FireFlyAI : MonoBehaviour {
 	public float scaleChange;
 	private float target;
     public float waitSeconds;
+	public bool isPaused=false;
 
     // Use this for initialization
     void Start () {
@@ -38,10 +39,12 @@ public class FireFlyAI : MonoBehaviour {
 		}
 	}
 	void ChangeLightRadius() {
-		if (!isDecreasing) {
-			radiusNow = radiusNow + scaleChange;
-		} else {
-			radiusNow = radiusNow - scaleChange;
+		if (!isPaused) {
+			if (!isDecreasing) {
+				radiusNow = radiusNow + scaleChange;
+			} else {
+				radiusNow = radiusNow - scaleChange;
+			}
 		}
 		lightSource.lightRadius = radiusNow;
 	}

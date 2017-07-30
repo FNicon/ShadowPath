@@ -9,7 +9,8 @@ public class Pause : MonoBehaviour {
     private List<GameObject> dynamicObjects = new List<GameObject>();
     private List<GameObject> kinematicObjects = new List<GameObject>();
     private List<GameObject> staticObjects = new List<GameObject>();
-    private List<GameObject> animatedObjects = new List<GameObject>();
+	private List<GameObject> animatedObjects = new List<GameObject>();
+	private List<GameObject> fireFlies = new List<GameObject> ();
     private List<Vector2> objectsVelocity = new List<Vector2>();
     private List<float> objectsAngularV = new List<float>();
 
@@ -35,6 +36,7 @@ public class Pause : MonoBehaviour {
         staticObjects.Clear();
         animatedObjects.Clear();
         objectsVelocity.Clear();
+		fireFlies.Clear ();
         
         //Listing all rigidbodytype and animated objects
         GameObject[] allObjects = (GameObject[])Resources.FindObjectsOfTypeAll(typeof(GameObject));
@@ -63,6 +65,9 @@ public class Pause : MonoBehaviour {
                 {
                     animatedObjects.Add(singleObject);
                 }
+				if (singleObject.GetComponent<FireFlyAI> () != null) {
+					fireFlies.Add (singleObject);
+				}
             }
         }
 
@@ -105,6 +110,13 @@ public class Pause : MonoBehaviour {
         }
 		isPaused = true;
 		player.immovable = true;
+
+		//freezing all fireflies
+		foreach (GameObject singleObject in fireFlies) {
+			FireFlyAI light;
+			light = singleObject.transform.GetComponent<FireFlyAI> ();
+			light.isPaused = true;
+		}
     }
 
     //unfreeze all objects in the scene
@@ -141,6 +153,15 @@ public class Pause : MonoBehaviour {
             animation = singleObject.transform.GetComponent<Animator>();
             animation.enabled = true;
         }
+
+		//unfreezing firefly lights
+		foreach (GameObject singleObject in fireFlies) {
+			FireFlyAI light;
+			light = singleObject.transform.GetComponent<FireFlyAI> ();
+			light.isPaused = false;
+		}
+
+		//unfreezing player control
 		player.immovable = false;
 		isPaused = false;
     }
