@@ -48,5 +48,5 @@ public class SaveLoad : MonoBehaviour {
 class SaveData {
 	public Vector2 playerPosition;
 	public Scene scene;
-	public List<GameObject> soul;
+	public List<Soul> soul;
 }

@@ -51,6 +51,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Enemy\Enemy1AI.cs" />
+     <Compile Include="Assets\Enemy\Enemy2.cs" />
+     <Compile Include="Assets\Enemy\Movement\UpDownMovement.cs" />
      <Compile Include="Assets\followCamera.cs" />
      <Compile Include="Assets\Scripts\Audio\AudioButton.cs" />
      <Compile Include="Assets\Scripts\Audio\VolumeConotroller.cs" />
@@ -65,9 +68,6 @@
      <Compile Include="Assets\Scripts\Dialogue\Notification.cs" />
      <Compile Include="Assets\Scripts\Dialogue\NotificationManager.cs" />
      <Compile Include="Assets\Scripts\Dialogue\NotificationTrigger.cs" />
-     <Compile Include="Assets\Scripts\Enemy\Enemy1AI.cs" />
-     <Compile Include="Assets\Scripts\Enemy\Enemy2.cs" />
-     <Compile Include="Assets\Scripts\Enemy\Movement\UpDownMovement.cs" />
      <Compile Include="Assets\Scripts\Menu Manager\ExitMenuManager.cs" />
      <Compile Include="Assets\Scripts\Menu Manager\ExtraMenuManager.cs" />
      <Compile Include="Assets\Scripts\Menu Manager\MainMenuManager.cs" />
