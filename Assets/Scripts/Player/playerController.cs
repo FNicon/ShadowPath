@@ -92,7 +92,7 @@ public class playerController : MonoBehaviour {
 		}
     }
 
-	bool isInputJump() {
+	public bool isInputJump() {
 		return (Input.GetAxis ("Jump") > 0 && !immovable);
 	}
 	bool isInputFire1() {
