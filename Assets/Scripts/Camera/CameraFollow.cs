@@ -54,11 +54,15 @@ public class CameraFollow : MonoBehaviour {
 		float newX, newY;
 		newX = follow.position.x + offset.x;
 		newY = follow.position.y + offset.y;
-		if (newX > maximumX || newX < minimumX) {
-			newX = transform.position.x;
+		if (newX > maximumX) {
+			newX = maximumX;
+		}else if(newX < minimumX){
+			newX = minimumX;
 		}
-		if (newY > maximumY || newY < minimumY) {
-			newY = transform.position.y;
+		if (newY > maximumY) {
+			newY = maximumY;
+		} else if(newY < minimumY){
+			newY = minimumY;
 		}
 		newCameraPosition = new Vector3(newX,newY,transform.position.z);
 		transform.position = Vector3.Lerp (transform.position, newCameraPosition, smoothMotion * Time.deltaTime);
