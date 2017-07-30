@@ -8,6 +8,7 @@ public class SceneLoader : MonoBehaviour {
 	private string currentScene;
 	private string mainMenuScene;
 	public BoxCollider2D boxTrigger;
+	public int waitingTime;
 
 	// Use this for initialization
 	void Start () {
@@ -31,8 +32,12 @@ public class SceneLoader : MonoBehaviour {
 		}
 	}
 	public void menuScene() {
+		waitForFade ();
 		SceneManager.LoadScene (mainMenuScene);
 	}
 
+	IEnumerator waitForFade(){
+		yield return new WaitForSeconds (waitingTime);
+	}
 
 }

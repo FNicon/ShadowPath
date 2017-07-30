@@ -46,6 +46,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\LoadingScreenFade.cs" />
+     <Compile Include="Assets\LoadingScreenScaler.cs" />
      <Compile Include="Assets\Scripts\Audio\AudioButton.cs" />
      <Compile Include="Assets\Scripts\Audio\VolumeConotroller.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraFollow.cs" />
